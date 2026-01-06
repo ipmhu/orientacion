@@ -92,6 +92,7 @@
             .scroll-area { padding: 16px; }
             .card { padding: 16px; overflow-x: auto; }
             .btn-soporte { bottom: 15px; right: 15px; padding: 10px 20px; font-size: 0.9rem; }
+            .grid { grid-template-columns: 1fr; } /* Apila los grids en móvil */
             .login-card { padding: 2rem; width: 90%; }
         }
     </style>
@@ -107,7 +108,7 @@
         <p style="color:var(--text-light); margin-bottom:25px; font-size:0.9rem">Gestión y Psicología Educativa</p>
         
         <input type="text" id="user" placeholder="Correo Institucional">
-        <input type="password" id="pass" placeholder="ID de Orientadora">
+        <input type="password" id="pass" placeholder="Contraseña">
         <button class="btn-primary" onclick="login()">ACCEDER AL SISTEMA</button>
     </div>
 </div>
@@ -247,7 +248,7 @@
 </a>
 
 <script>
-    const API = "https://script.google.com/macros/s/AKfycbxyy5jcW9iMXp0kLoMoocFDTbaIh1lL5IF8YZFh8HqWKjGXwpsaCUXSFW87jE_qxyhmDg/exec"; 
+    const API = "https://script.google.com/macros/s/AKfycbw9W36V3tTSjrqkiBPD25Fp4zoH4qYt85e90QXy53rQe2mwkHS6U8ixEInpUWpwIZ5jEA/exec"; 
     let ORIENTADORA = {};
 
     async function login() {
@@ -265,7 +266,7 @@
             document.getElementById('my-tel').value = res.tel;
             document.getElementById('my-cedula').value = res.cedula;
             document.getElementById('my-ingreso').value = res.ingreso;
-        } else alert("Datos incorrectos. Verifique su ID y Correo.");
+        } else alert("Correo o ID incorrectos.");
     }
 
     function toggleMenu() {
